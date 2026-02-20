@@ -240,7 +240,8 @@ function loadSitemapIntoConfig(program, initialConfig) {
 
 				$('url > loc').toArray().forEach(element => {
 					let url = $(element).text();
-					if (sitemapExclude && url.match(sitemapExclude) || sitemapOnlyInclude && !url.match(sitemapOnlyInclude)) {
+					if ((sitemapExclude && url.match(sitemapExclude))
+						|| (sitemapOnlyInclude && !url.match(sitemapOnlyInclude))) {
 						return;
 					}
 					if (sitemapFind) {
